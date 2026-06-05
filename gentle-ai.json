@@ -6,14 +6,14 @@
             "bin": [
                 "gentle-ai.exe"
             ],
-            "hash": "c1a0715baf3966090891b065b01351e36ed6c4c35bcc25c99c6d4c35e53059d5"
+            "hash": "ae5b3166495ef1ef0f934a397062c3522d795200f19fddf279bb700bd91fa004"
         },
         "arm64": {
             "url": "https://github.com/Gentleman-Programming/gentle-ai/releases/download/v1.36.3/gentle-ai_1.36.3_windows_arm64.zip",
             "bin": [
                 "gentle-ai.exe"
             ],
-            "hash": "65acc57a89abff9d3678d98e7e677b0c533020bcf27a67a9ca8a9bd6cbeb567c"
+            "hash": "e092fc2bf423a14c56191eff62c99a885f1eafad2060d700e6c12a4eb15e393a"
         }
     },
     "homepage": "https://github.com/Gentleman-Programming/gentle-ai",
