@@ -1,0 +1,26 @@
+{
+    "version": "2.10.1",
+    "description": "Provider-agnostic AI code review for Git commits and pull requests.",
+    "homepage": "https://github.com/Gentleman-Programming/gentleman-guardian-angel",
+    "license": "MIT",
+    "depends": "git",
+    "url": "https://github.com/Gentleman-Programming/gentleman-guardian-angel/archive/refs/tags/v2.10.1.tar.gz",
+    "hash": "c1dbcee120b83238e1c7ecce4a60f88a66810796ad95a239debc09e8509d0fba",
+    "extract_dir": "gentleman-guardian-angel-2.10.1",
+    "pre_install": [
+        "$gga = Join-Path $dir 'bin\\gga'",
+        "$content = [System.IO.File]::ReadAllText($gga).Replace('VERSION=\"${GGA_VERSION:-dev}\"', \"VERSION=\"\"$version\"\"\")",
+        "[System.IO.File]::WriteAllText($gga, $content, [System.Text.UTF8Encoding]::new($false))",
+        "$bash = Join-Path (scoop prefix git) 'bin\\bash.exe'",
+        "$launcher = @('@echo off', ('\"' + $bash + '\" \"%~dp0bin\\gga\" %*'), 'exit /b %ERRORLEVEL%')",
+        "Set-Content -Path (Join-Path $dir 'gga.bat') -Value $launcher -Encoding Ascii"
+    ],
+    "bin": "gga.bat",
+    "checkver": {
+        "github": "https://github.com/Gentleman-Programming/gentleman-guardian-angel"
+    },
+    "autoupdate": {
+        "url": "https://github.com/Gentleman-Programming/gentleman-guardian-angel/archive/refs/tags/v$version.tar.gz",
+        "extract_dir": "gentleman-guardian-angel-$version"
+    }
+}
